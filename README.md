@@ -4,5 +4,5 @@ project is to predict the relevance of urls, given specific search queries. A tr
 
 I try five different classifiers:
 Random Forest, Ada Boosting, Gradient Boosting, Logistic Regression and Support Vector Machine.
-Gradient Boosting performs the best based on my experiments. This report presents data observations,
+Gradient Boosting performs the best based on my experiments. The report presents data observations,
 solution evaluation, candidate solutions and corresponding tuning methods.
