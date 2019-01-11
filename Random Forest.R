@@ -71,7 +71,7 @@ rf.predf=ifelse(rf.pred==1,1,0)
 write.table(rf.pred,"output1000.txt",sep="\n", row.names = FALSE, quote = FALSE, col.names = FALSE)
 
 
-########??????#################################
+######## Analysis #################################
 training.size <- dim(training)[1]
 test = sample(1:training.size,training.size/10)
 train=-test
