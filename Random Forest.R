@@ -30,7 +30,7 @@ training[,c('sig1_max','sig2_max','sig3_max','sig4_max','sig5_max','sig6_max','s
 ######################### prepare for learning ######################################
 train_feature<-training[,c(3:12,14:41)]
 train_target<-training[,13]
-################################################test##############
+############################# test ####################################################
 head(test,n = 20)
 str(test)
 
@@ -56,7 +56,7 @@ test[,c('sig1_max','sig2_max','sig3_max','sig4_max','sig5_max','sig6_max','sig7_
 #test_target=test[,13]
 test_feature<-test[,c(3:40)]
 
-##############RF#################
+############################# RF #######################################################
 library(randomForest)
 
 training$relevance<-factor(training$relevance)
@@ -71,7 +71,7 @@ rf.predf=ifelse(rf.pred==1,1,0)
 write.table(rf.pred,"output1000.txt",sep="\n", row.names = FALSE, quote = FALSE, col.names = FALSE)
 
 
-######## Analysis #################################
+############################### Analysis ##################################################
 training.size <- dim(training)[1]
 test = sample(1:training.size,training.size/10)
 train=-test
@@ -79,11 +79,7 @@ training.test = training[test,]
 training.train = training[-test,]
 
 importance(rf.train1)
-
 print(rf.train1)
-
-importance(rf.train1)
-
 varImpPlot (rf.train1)
 
 x=table(rf.predf,training.test$relevance)
